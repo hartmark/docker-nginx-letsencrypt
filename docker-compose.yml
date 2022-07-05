@@ -37,13 +37,13 @@ services:
     environment:
       - NGINX_DOCKER_GEN_CONTAINER=nginx-gen
 
-  sample-website:
+  root-website:
     restart: always
     image: root-website
     build: ./services/website
-    container_name: sample-website
+    container_name: root-website
     volumes:
-      - "./volumes/nginx-sample-website/conf.d/:/etc/nginx/conf.d"
+      - "./volumes/root-website/conf.d/:/etc/nginx/conf.d"
     environment:
       - VIRTUAL_HOST=staropramen.harre.dynv6.net
       - VIRTUAL_NETWORK=nginx-proxy
